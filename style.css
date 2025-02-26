@@ -59,6 +59,7 @@ table {
     background-color: #121212;
     border: none;
     margin: 20px auto;
+    table-layout: fixed;
 }
 
 th, td {
@@ -66,6 +67,7 @@ th, td {
     text-align: center;
     font-size: 15px;
     min-width: 100px;
+    width: auto;
     border: none;
 }
 
@@ -88,7 +90,7 @@ tr {
 }
 
 thead {
-    height: 50px
+    height: 50px;
 }
 
 thead th {
@@ -114,8 +116,27 @@ tbody tr:nth-child(odd) {
 }
 
 @media (max-width: 600px) {
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+    }
+
     table {
-        width: 90%;
+        width: 100%;
+        display: block;
+        white-space: nowrap;
+    }
+
+    thead, tbody, tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    thead {
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
 
     th, td {
@@ -123,14 +144,6 @@ tbody tr:nth-child(odd) {
         font-size: 12px;
     }
 
-    thead {
-        height: 25px
-    }
-
-    tbody td {
-        text-align: left;
-    }
-    
     thead th {
         width: 250px;
         font-size: 13px;
@@ -139,6 +152,10 @@ tbody tr:nth-child(odd) {
         background-color: #ccc;
         color: #000000;
         border-bottom: 2px solid #444444;
+    }
+
+    tbody td {
+        text-align: left;
     }
 }
 
@@ -149,16 +166,16 @@ th:nth-child(2), td:nth-child(2) {
 ::-webkit-scrollbar {
     width: 2.5px;
 }
-  
+
 ::-webkit-scrollbar-track {
     background: #000000;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(to bottom, #000000, #ffffff, #000000);
     transition: background-color 0.3s;
 }
-  
+
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, #000000, #ffffff, #000000);
 }
