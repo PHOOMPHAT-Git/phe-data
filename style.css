@@ -116,7 +116,6 @@ tbody tr:nth-child(odd) {
 @media (max-width: 600px) {
     table {
         width: 90%;
-        margin: 20px auto;
     }
 
     th, td {
@@ -126,6 +125,10 @@ tbody tr:nth-child(odd) {
 
     thead {
         height: 25px
+    }
+
+    tbody td {
+        text-align: center;
     }
     
     thead th {
