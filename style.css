@@ -54,9 +54,9 @@ button:hover {
 
 table {
     width: 100%;
-    max-width: 1200px;
+    max-width: 175vw;
     border-collapse: collapse;
-    background-color: #121212;
+    margin: 10px auto;
     overflow-x: auto;
     display: block;
 }
