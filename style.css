@@ -1,10 +1,38 @@
 body {
+    display: grid;
+    background-color: #000;
+    place-items: center;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #000000;
     color: #ffffff;
     text-align: center;
+    font-family: 'SF Pro Text', 'SF Pro Icons', 'AOS Icons', 'Helvetica Neue',
+      Helvetica, Arial, sans-serif, system-ui;
+}
+
+body::before {
+    --size: 45px;
+    --line: rgba(255, 255, 255, 0.3);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+          90deg,
+          var(--line) 1px,
+          transparent 1px var(--size)
+        )
+        50% 50% / var(--size) var(--size),
+      linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    -webkit-mask: linear-gradient(-20deg, transparent 50%, white);
+            mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
 }
 
 h1 {
@@ -155,7 +183,7 @@ th:nth-child(2), td:nth-child(2) {
 }
 
 ::-webkit-scrollbar {
-    width: 2.5px;
+    width: 5px;
 }
   
 ::-webkit-scrollbar-track {
@@ -163,10 +191,6 @@ th:nth-child(2), td:nth-child(2) {
 }
   
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #000000, #ffffff, #000000);
+    background: linear-gradient(to bottom, #ffffff, #ffffff, #ffffff);
     transition: background-color 0.3s;
-}
-  
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(to bottom, #000000, #ffffff, #000000);
 }
